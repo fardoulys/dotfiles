@@ -1,11 +1,11 @@
-" Just such a great dotfile
-
+" It's my vim config
 
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   " autocompletion
 Plug 'scrooloose/nerdtree'                                      " folder view
+Plug 'scrooloose/nerdcommenter'                                 " comment out lines and other fun stuff
 Plug 'rafi/awesome-vim-colorschemes'                            " because who wants to pick just one theme
 Plug 'vim-airline/vim-airline'                                  " I basically just use it for the mode
 Plug 'vim-airline/vim-airline-themes'                           " gotta theme
@@ -14,6 +14,7 @@ Plug 'tpope/vim-surround'                                       " it's 2018 brac
 Plug 'w0rp/ale'                                                 " there's lint in my belly button and my code
 Plug 'airblade/vim-gitgutter'                                   " I have a bad memory, gitgutter does not
 Plug 'ervandew/supertab'                                        " you literally only have to press tab
+Plug 'Yggdroot/indentLine'                                      " show me those indents
 
 call plug#end()
 
@@ -60,3 +61,6 @@ let g:airline_powerline_fints=1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif     " open nerd tree if I open vim without any files
 map <C-o> :NERDTreeToggle<CR>
+
+" Indent line config
+let g:indentLine_char = '|'
