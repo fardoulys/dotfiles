@@ -1,0 +1,60 @@
+{
+  "name": "builder",
+  "version": "1.0.0",
+  "description": "muiltpurpose builder",
+  "scripts": {
+    "eslint": "eslint **/*.js",
+    "build": "parcel build index.html",
+    "dev": "parcel build index.html --out-dir dev"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^5.6.1",
+    "node-gyp": "^3.8.0",
+    "parcel-bundler": "^1.6.2",
+    "parcel-plugin-eslint": "^1.0.4",
+    "parcel-plugin-imagemin": "^2.1.1",
+    "prettier": "^1.12.1"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "Chrome >= 52",
+              "FireFox >= 44",
+              "Safari >= 7",
+              "Explorer 9",
+              "last 4 Edge versions"
+            ]
+          }
+        }
+      ]
+    ],
+    "ignore": [
+      "node_modules"
+    ],
+    "plugins": [
+      [
+        "transform-runtime",
+        {
+          "polyfill": true
+        }
+      ]
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "prettier"
+    ]
+  }
+}
